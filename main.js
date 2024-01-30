@@ -65,4 +65,13 @@ equalBtn.addEventListener('click', ()=>{
     operation = undefined
 })
 
+let clearBtn = document.querySelector('#clear')
+clearBtn.addEventListener('click', ()=>{
+    number = 0
+    firstNumber = 0
+    secondNumber = 0
+    operation = undefined
+    display.innerText = 0
+})
+
 console.log(number)
