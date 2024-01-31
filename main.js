@@ -94,11 +94,19 @@ clearBtn.addEventListener('click', ()=>{
 })
 
 
-// let decimalBtn = document.querySelector('#decimal')
-// decimalBtn.addEventListener('click', ()=>{
-//     if(firstNumber == 0 && operation == undefined){
-//         firstNumber += '.'
-//     }
-// })
+let decimalBtn = document.querySelector('#decimal')
+decimalBtn.addEventListener('click', ()=>{
+    // if(firstNumber == 0 && operation == undefined){
+    //     number += '.'
+    // }
+    if(!firstNumber.toString().includes('.')){
+        number += '.'
+        firstNumber += '.'
+    }else if(firstNumber.toString().includes('.') || secondNumber == 0){
+        number += '.'
+        secondNumber += '.'
+    }
+    // firstNumber.toString().includes('.') || pressedEqual == true &&
+})
 
 console.log(number)
