@@ -73,7 +73,7 @@ equalBtn.addEventListener('click', ()=>{
         display.textContent = 0 
     }else{
 
-        let total = calculator(Number(firstNumber), Number(secondNumber), operation)
+        let total = calculator(Number(firstNumber), Number(secondNumber), operation).toFixed(2)
         console.log(Number(firstNumber), Number(secondNumber), operation, total)
         display.innerText = total
         number = 0
@@ -96,9 +96,13 @@ clearBtn.addEventListener('click', ()=>{
 
 let decimalBtn = document.querySelector('#decimal')
 decimalBtn.addEventListener('click', ()=>{
-    // if(firstNumber == 0 && operation == undefined){
-    //     number += '.'
+    //need to keep the number thats there and add on to that one after decimal, this stops additional decimals
+    // if(firstNumber.toString().includes('.')){
+    //     // firstNumber = firstNumber.toString().slice(0,-1)
+    //     // number = number.toString().slice(0,-1)
+        
     // }
+
     if(!firstNumber.toString().includes('.')){
         number += '.'
         firstNumber += '.'
