@@ -73,8 +73,11 @@ equalBtn.addEventListener('click', ()=>{
         display.textContent = 0 
     }else{
 
-        let total = calculator(Number(firstNumber), Number(secondNumber), operation).toFixed(2)
+        let total = calculator(Number(firstNumber), Number(secondNumber), operation)
         console.log(Number(firstNumber), Number(secondNumber), operation, total)
+        if(total % 1 != 0){
+            total = total.toFixed(2)
+        }
         display.innerText = total
         number = 0
         firstNumber = total
