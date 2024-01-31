@@ -36,7 +36,8 @@ display.textContent = number
 digit.forEach((digit)=>{
     digit.addEventListener('click',()=>{
         if(pressedEqual === true){
-            firstNumber = 0
+            //setting this to 0 made the next first number into a single digit??
+            firstNumber = number;
         }
         
         number += digit.innerText
@@ -69,7 +70,7 @@ equalBtn.addEventListener('click', ()=>{
         return
     }
     if(firstNumber == 0 && secondNumber == 0 && operation == undefined){
-        display.innerText = 0 
+        display.textContent = 0 
     }else{
 
         let total = calculator(Number(firstNumber), Number(secondNumber), operation)
@@ -89,7 +90,15 @@ clearBtn.addEventListener('click', ()=>{
     firstNumber = 0
     secondNumber = 0
     operation = undefined
-    display.innerText = 0
+    display.textContent = number
 })
+
+
+// let decimalBtn = document.querySelector('#decimal')
+// decimalBtn.addEventListener('click', ()=>{
+//     if(firstNumber == 0 && operation == undefined){
+//         firstNumber += '.'
+//     }
+// })
 
 console.log(number)
