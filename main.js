@@ -11,6 +11,9 @@ function calculator(num1, num2, operation){
         return num1 * num2
     }
     if(operation == '/'){
+        if(num2 === 0){
+            return 'Division by 0 is treasonous and punishable by death'
+        }
         return num1 / num2
     }
 }
@@ -62,6 +65,9 @@ operator.forEach((op)=>{
 
 let equalBtn = document.querySelector('#equals')
 equalBtn.addEventListener('click', ()=>{
+    if(firstNumber != 0 && operation == undefined){
+        return
+    }
     if(firstNumber == 0 && secondNumber == 0 && operation == undefined){
         display.innerText = 0 
     }else{
