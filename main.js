@@ -25,11 +25,16 @@ let number = 0
 let firstNumber=0
 let secondNumber=0
 let operation;
+let pressedEqual = false
 
 let display = document.querySelector('#display')
 display.textContent = number
+
 digit.forEach((digit)=>{
     digit.addEventListener('click',()=>{
+        if(pressedEqual === true){
+            firstNumber = 0
+        }
         
         number += digit.innerText
         console.log(digit.innerText)
@@ -51,18 +56,25 @@ operator.forEach((op)=>{
         operation = op.innerText
         number = 0
         console.log(operation)
+        pressedEqual = false
     })
 })
 
 let equalBtn = document.querySelector('#equals')
 equalBtn.addEventListener('click', ()=>{
-    let total = calculator(Number(firstNumber), Number(secondNumber), operation)
-    console.log(Number(firstNumber), Number(secondNumber), operation, total)
-    display.innerText = total
-    number = 0
-    firstNumber = total
-    secondNumber = 0
-    operation = undefined
+    if(firstNumber == 0 && secondNumber == 0 && operation == undefined){
+        display.innerText = 0 
+    }else{
+
+        let total = calculator(Number(firstNumber), Number(secondNumber), operation)
+        console.log(Number(firstNumber), Number(secondNumber), operation, total)
+        display.innerText = total
+        number = 0
+        firstNumber = total
+        secondNumber = 0
+        operation = undefined
+        pressedEqual = true
+    }
 })
 
 let clearBtn = document.querySelector('#clear')
