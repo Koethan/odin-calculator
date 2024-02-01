@@ -75,7 +75,10 @@ equalBtn.addEventListener('click', ()=>{
 
         let total = calculator(Number(firstNumber), Number(secondNumber), operation)
         console.log(Number(firstNumber), Number(secondNumber), operation, total)
-        if(total % 1 != 0){
+        if(total =='Division by 0 is treasonous and punishable by death'){
+            display.innerText = total
+        }
+        else if(total % 1 != 0){
             total = total.toFixed(2)
         }
         display.innerText = total
@@ -112,7 +115,6 @@ decimalBtn.addEventListener('click', ()=>{
         secondNumber += '.'
     }
     
-    // firstNumber.toString().includes('.') || pressedEqual == true &&
 })
 
 console.log(number)
