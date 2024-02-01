@@ -99,12 +99,10 @@ clearBtn.addEventListener('click', ()=>{
 
 let decimalBtn = document.querySelector('#decimal')
 decimalBtn.addEventListener('click', ()=>{
-    //need to keep the number thats there and add on to that one after decimal, this stops additional decimals
-    // if(firstNumber.toString().includes('.')){
-    //     // firstNumber = firstNumber.toString().slice(0,-1)
-    //     // number = number.toString().slice(0,-1)
-        
-    // }
+    if(display.textContent.includes('.')){
+        console.log('hello')
+        return
+    }
 
     if(!firstNumber.toString().includes('.')){
         number += '.'
@@ -113,6 +111,7 @@ decimalBtn.addEventListener('click', ()=>{
         number += '.'
         secondNumber += '.'
     }
+    
     // firstNumber.toString().includes('.') || pressedEqual == true &&
 })
 
